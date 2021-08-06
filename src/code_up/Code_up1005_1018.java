@@ -45,7 +45,5 @@ public class Code_up1005_1018 {
 		System.out.println(time);
 		
 	}
-	
-	
 
 }
