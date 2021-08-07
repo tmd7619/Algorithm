@@ -1,1 +1,1 @@
-# Code-up-100-Questions
+Algorithm
