@@ -1,4 +1,4 @@
-package do_it_chap01_exam;
+package do_it_chap01_practice;
 
 public class exam12 {
 
