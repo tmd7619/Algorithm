@@ -8,9 +8,13 @@ import java.util.Scanner;
 
 class LastNElements {
 	public static void main(String[] args) {
-		Scanner stdIn = new Scanner(System.in);
-		final int N = 10;
-		int[] a = new int[N];		// 입력 받은 값을 저장
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("배열의 size를 입력하세요 : ");
+		final int n = sc.nextInt();
+		sc.nextLine();
+		
+		int[] a = new int[n];		// 입력 받은 값을 저장
 		int cnt = 0;				// 입력 받은 개수
 		int retry;					// 다시 한 번?
 
@@ -18,16 +22,18 @@ class LastNElements {
 
 		do {
 			System.out.printf("%d번째 정수：", cnt + 1);
-			a[cnt++ % N] = stdIn.nextInt();
+			a[cnt++ % n] = sc.nextInt();
+			sc.nextLine();
 
 			System.out.print("계속 할까요? (예.1／아니오.0）：");
-			retry = stdIn.nextInt();
+			retry = sc.nextInt();
+			sc.nextLine();
 		} while (retry == 1);
 
-		int i = cnt - N;
+		int i = cnt - n;
 		if (i < 0) i = 0;
 
 		for ( ; i < cnt; i++)
-			System.out.printf("%2d번째의 정수 ＝ %d\n", i + 1, a[i % N]);
+			System.out.printf("%2d번째의 정수 ＝ %d\n", i + 1, a[i % n]);
 	}
 }
