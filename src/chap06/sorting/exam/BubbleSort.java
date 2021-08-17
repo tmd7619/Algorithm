@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class BubbleSort {
 	
 	// a[idx1]와 [a[idx2]의 값을 바꾼다
-	static void swap(int[] a, int idx1, int idx2) {
+	public static void swap(int[] a, int idx1, int idx2) {
 		int temp = a[idx1] ;  
 		a[idx1] = a[idx2]; // a[idx2] to a[idx1]
 		a[idx2] = temp ; // temp to a[idx2]
