@@ -2,51 +2,51 @@ package code_up;
 
 import java.util.Scanner;
 
-public class Code_up1098 { 
-	
-	// 다시풀어보기
-	public static void main(String[] args) {
-		
-		
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int w = sc.nextInt(); // width
-		sc.nextLine();
-		int h = sc.nextInt(); // height 
-		sc.nextLine();
-		int n = sc.nextInt(); // 막대개수 
-		sc.nextLine();
-		
-		
-		while(n>0) {
-		
-			System.out.print("방향을 입력해 주세요 : ");
-			int d = sc.nextInt(); // 방향 (가로 == 1 or 세로 == 0)
-			sc.nextLine();
-			
-			System.out.print("x좌표 입력 : ");
-			int x = sc.nextInt(); // x좌표 
-			sc.nextLine();
-			System.out.print("y좌표 입력 : ");
-			int y = sc.nextInt(); // y좌표 
-			sc.nextLine();
-			
-			for(int i = 0 ; i < h ; i ++) { //row add
-				for(int j = 0 ; j < w ; j ++) { // col add
-					if(d == 1) { // 막대 모양이 가로일 경우 
-						if(j < x)
-							System.out.print(0 + " ");
-						else 
-							System.out.print(1 + " ");
-					}
-				}
-			}
-		
-			n--;
-		
-		}
-	
-	}
+public class Code_up1098 {
+
+    // 다시풀어보기
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("x좌표 입력 : ");
+        int sizeX = scanner.nextInt();
+        System.out.println("y좌표 입력 : ");
+        int sizeY = scanner.nextInt();
+
+        // 배열 생성
+        int[][] arr = new int[sizeX][sizeY];
+
+        int n = scanner.nextInt();
+        int l, d, x, y;
+
+        // 갯수 만큼 반복
+        for (int i = 0; i < n; i++) {
+            l = scanner.nextInt();
+            d = scanner.nextInt();
+            x = scanner.nextInt();
+            y = scanner.nextInt();
+
+            // 막대의 가로 세로 구분
+            if (d == 0) {
+                for (int a = y; a < y + l; a++) {
+                    arr[x - 1][a - 1] = 1;
+                }
+            } else {
+                for (int a = x; a < x + l; a++) {
+                    arr[a - 1][y - 1] = 1;
+                }
+            }
+
+        }
+
+        // 배열 출력
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
 
 }

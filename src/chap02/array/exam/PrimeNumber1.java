@@ -5,7 +5,6 @@ package chap02.array.exam;
 class PrimeNumber1 {
 	public static void main(String[] args) {
 		int counter = 0;			// 나눗셈의 횟수
-
 		for (int n = 2; n <= 1000; n++) {
 			int i;
 			for (i = 2; i < n; i++) {
